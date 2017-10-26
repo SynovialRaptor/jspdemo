@@ -1,3 +1,4 @@
-node{
-	echo 'prova'
+#!/usr/bin/env groovy
+node('master'){
+	echo "hello world!"
 }
