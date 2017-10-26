@@ -1,5 +1,3 @@
-pipeline {
-    agent any
-
-    echo 'prova'
+node{
+	echo 'prova'
 }
