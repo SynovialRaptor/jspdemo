@@ -1,17 +1,11 @@
-Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent any
-
-    stages {
-        stage('Deploy') {
-            when {
-              expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-              }
-            }
-            steps {
-                sh 'make publish'
-            }
-        }
+  agent { docker 'maven:3.3.3' }
+  stages {
+    stage('build') {
+      steps {
+        sh 'mvn --version'
+        sh 'mvn install'
+      }
     }
+  }
 }
